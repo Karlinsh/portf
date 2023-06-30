@@ -1,12 +1,10 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import css from './Contactin.module.scss'
+import css from "./Contactin.module.scss";
+import { toast } from "react-toastify";
 
 export const Contactin = () => {
-
   const form = useRef();
-
-
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -20,22 +18,23 @@ export const Contactin = () => {
       .then(
         (result) => {
           console.log(result.text);
+          toast.success("Отправлено");
         },
         (error) => {
           console.log(error.text);
+          toast.error("ошибка");
         }
       );
   };
 
   return (
     <div className={css.wrapper}>
-        <h2>name</h2>
-        <p>name</p>
+      <h2>Text Me</h2>
       <form ref={form} onSubmit={sendEmail}>
-        <input type="text" name="user_name" placeholder='Name' />
-        <input type="email" name="user_email" placeholder='Emall' />
-        <input className={css.messege} name="message" placeholder='Messege'  />
-        <input className={css.send} type="submit" value='Send'   />
+        <input type="text" name="user_name" placeholder="Name" />
+        <input type="email" name="user_email" placeholder="Emall" />
+        <input className={css.messege} name="message" placeholder="Messege" />
+        <input className={css.send} type="submit" value="Send" />
       </form>
     </div>
   );

@@ -15,7 +15,7 @@ import { useFrame } from '@react-three/fiber'
         <PerspectiveCamera makeDefault position={[0,0,5]} />
         <color attach="background" args={["#dc9dcd"]} />
         <Text ref={textref} fontSize={1} color='#555'>
-          TEST
+        Karlin
         </Text>
       </RenderTexture>
     </meshStandardMaterial>
