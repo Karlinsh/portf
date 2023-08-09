@@ -3,12 +3,14 @@ import css from "./Works.module.scss";
 import Webdesign from "../../Component/Webdesign/Webdesign";
 import Development from "../../Component/Development/Development";
 import ProductDesign from "../../Component/ProductDesign/ProductDesign";
+import SocialMedia from "../../Component/SocialMedia/SocialMedia";
+import Myworks from "../../Component/Myworks/Myworks";
 
 function Works() {
   const data = [
     "Web Design",
-    "Development",
-    "Ilustration",
+    "What i know",
+    "My works",
     "Product Design",
     "Social Media",
   ];
@@ -36,7 +38,7 @@ function Works() {
           </div>
         </div>
         <div className={css.right}>
-          {work === "Web Design" ? (<Webdesign/>) : work === "Development" ? (<Development/>) : <ProductDesign/>}
+          {work === "Web Design" ? (<Webdesign/>) : work === "What i know" ? (<Development/>) : work === "Social Media" ? (<SocialMedia/>) : work === "My works" ? (<Myworks/>) :     <ProductDesign/>}
         </div>
       </div>
     </div>
